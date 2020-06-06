@@ -6,15 +6,518 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>717</width>
+    <height>384</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Jeopardy</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>260</y>
+      <width>197</width>
+      <height>67</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_9">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QPushButton" name="correctBtn">
+         <property name="text">
+          <string>Correct!</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="incorrectBtn">
+         <property name="text">
+          <string>Incorrect!</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QPushButton" name="answerBtn">
+       <property name="text">
+        <string>Answer</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="currentTeamLabel">
+    <property name="geometry">
+     <rect>
+      <x>104</x>
+      <y>20</y>
+      <width>451</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>For Team1:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>90</y>
+      <width>104</width>
+      <height>116</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QLabel" name="teamNum1">
+         <property name="text">
+          <string>Team 1:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="pointsTeam1">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>50</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <item>
+        <widget class="QLabel" name="teamNum2">
+         <property name="text">
+          <string>Team 2:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="pointsTeam2">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>50</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <item>
+        <widget class="QLabel" name="teamNum3">
+         <property name="text">
+          <string>Team 3:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="pointsTeam3">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>50</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_7">
+       <item>
+        <widget class="QLabel" name="teamNum4">
+         <property name="text">
+          <string>Team 4:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="pointsTeam4">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>250</y>
+      <width>99</width>
+      <height>49</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_8">
+     <item>
+      <widget class="QLabel" name="manualLabel">
+       <property name="text">
+        <string>Manual Selection</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="manualComboBox">
+       <item>
+        <property name="text">
+         <string>----------</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Team1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Team2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Team3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Team4</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget_4">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>70</y>
+      <width>507</width>
+      <height>199</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_7">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="topic1">
+         <property name="text">
+          <string>Topic 1</string>
+         </property>
+        </widget>
+       </item>
+       <item alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="topic2">
+         <property name="text">
+          <string>Topic 2</string>
+         </property>
+        </widget>
+       </item>
+       <item alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="topic3">
+         <property name="text">
+          <string>Topic 3</string>
+         </property>
+        </widget>
+       </item>
+       <item alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="topic4">
+         <property name="text">
+          <string>Topic 4</string>
+         </property>
+        </widget>
+       </item>
+       <item alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="topic5">
+         <property name="text">
+          <string>Topic 5</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QPushButton" name="T1Q1">
+           <property name="text">
+            <string>100</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="T1Q2">
+           <property name="text">
+            <string>200</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="T1Q3">
+           <property name="text">
+            <string>300</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="T1Q4">
+           <property name="text">
+            <string>400</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="T1Q5">
+           <property name="text">
+            <string>500</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QPushButton" name="T2Q1">
+           <property name="text">
+            <string>100</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="T2Q2">
+           <property name="text">
+            <string>200</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="T2Q3">
+           <property name="text">
+            <string>300</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="T2Q4">
+           <property name="text">
+            <string>400</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="T2Q5">
+           <property name="text">
+            <string>500</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QPushButton" name="T3Q1">
+           <property name="text">
+            <string>100</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="T3Q2">
+           <property name="text">
+            <string>200</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="T3Q3">
+           <property name="text">
+            <string>300</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="T3Q4">
+           <property name="text">
+            <string>400</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="T3Q5">
+           <property name="text">
+            <string>500</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <widget class="QPushButton" name="T4Q1">
+           <property name="text">
+            <string>100</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="T4Q2">
+           <property name="text">
+            <string>200</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="T4Q3">
+           <property name="text">
+            <string>300</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="T4Q4">
+           <property name="text">
+            <string>400</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="T4Q5">
+           <property name="text">
+            <string>500</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item>
+          <widget class="QPushButton" name="T5Q1">
+           <property name="text">
+            <string>100</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="T5Q2">
+           <property name="text">
+            <string>200</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="T5Q3">
+           <property name="text">
+            <string>300</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="T5Q4">
+           <property name="text">
+            <string>400</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="T5Q5">
+           <property name="text">
+            <string>500</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="questionText">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>30</y>
+      <width>611</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="text">
+     <string>Choose a question!</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>717</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
