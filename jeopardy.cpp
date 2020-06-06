@@ -5,13 +5,6 @@
 
 using namespace std;
 
-Jeopardy::Jeopardy(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::Jeopardy)
-{
-    ui->setupUi(this);
-}
-
 static ifstream fin; //used to read questions from a file
 static string question; //stores a question read from a file
 const string TOPICS_FILE_NAME = "jeopardyTopics.txt"; //filename for the input file holding the topics
@@ -46,6 +39,37 @@ int getPointsValue(int col);
 //receives the column index of a question in board and returns its points value
 int getTeamNumber(int turnCount);
 //receives the turnCount and returns the team number of the team whose turn it is
+
+Jeopardy::Jeopardy(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::Jeopardy)
+{
+    ui->setupUi(this);
+
+
+    ofstream fout;
+    fout.open("INPUT_FILES_GO_HERE.txt");
+    fout.close();
+
+
+    openInputFile(fin, TOPICS_FILE_NAME); //open the input file holding the topics
+    readTopics(fin, topics, NUM_TOPICS); //read each line in the file and store them in topics
+    closeInputFile(fin); //close the input file
+
+    openInputFile(fin, QUESTIONS_FILE_NAME); //open the input file holding the questions
+    readLine(fin, board, NUM_QUESTIONS); //read each line in the file and store them in board
+    closeInputFile(fin); //close the input file
+
+    openInputFile(fin, ANSWERS_FILE_NAME); //open the input file holding the questions
+    readLine(fin, answers, NUM_QUESTIONS); //read each line in the file and store them in answers
+    closeInputFile(fin); //close the input file
+
+    ui->topic1->setText(QString::fromStdString(topics[0])); //change topic names
+    ui->topic2->setText(QString::fromStdString(topics[1]));
+    ui->topic3->setText(QString::fromStdString(topics[2]));
+    ui->topic4->setText(QString::fromStdString(topics[3]));
+    ui->topic5->setText(QString::fromStdString(topics[4]));
+}
 
 Jeopardy::~Jeopardy()
 {
