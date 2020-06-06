@@ -33,6 +33,7 @@ static int pointsTeam3 = 0; //holds the cumulative points for team 3
 static int pointsTeam4 = 0; //holds the cumulative points for team 4
 //static int incorrectCount = 0; //counter to keep track of how many times a question was incorrectly answered
 
+//adding comment for previous commit
 void readTopics(ifstream& fin, string topics[], int numTopics);
 //reads numTopics lines from the input file and stores each line in topics
 void readLine(ifstream& fin, string board[][NUM_TOPICS], int numQuestions);
